@@ -13,6 +13,7 @@ public class Main {
         Game game = new Game();
         word.randomWord();
         while (!word.isGuess()) {
+
             game.askLetter(hangmanStatus, guessedLetters, word);
         }
 

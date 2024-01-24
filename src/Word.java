@@ -6,7 +6,10 @@ public class Word {
         String[] wordList = {"pomme", "banane", "orange", "kiwi", "mangue", "ananas", "raisin"};
         targetWord = wordList[(int)Math.floor(Math.random() * wordList.length)];
         currentGuess = new StringBuilder();
-        currentGuess.append("_".repeat(wordList.length));
+        System.out.println(wordList.length-1);
+        currentGuess.append("_".repeat(wordList.length-1));
+        System.out.println(targetWord);
+
         return targetWord;
     }
     public String getGuess() {

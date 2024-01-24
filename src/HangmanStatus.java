@@ -4,7 +4,7 @@ public class HangmanStatus {
             // Étape 0: Pas d'erreur
             """
 +---+
-|   |
+ |  |
     |
     |
     |
@@ -15,8 +15,8 @@ public class HangmanStatus {
             // Étape 1: Tête
             """
 +---+
-|   |
-O   |
+ |  |
+ O  |
     |
     |
     |
@@ -26,9 +26,9 @@ O   |
             // Étape 2: Corps
             """
 +---+
-|   |
-O   |
-|   |
+ |  |
+ O  |
+ |  |
     |
     |
 ======
@@ -37,8 +37,8 @@ O   |
             // Étape 3: Bras gauche
             """
 +---+
-|   |
-O   |
+ |  |
+ O  |
 /|  |
     |
     |
@@ -48,8 +48,8 @@ O   |
             // Étape 4: Bras droit
             """
 +---+
-|   |
-O   |
+ |  |
+ O  |
 /|\\ |
     |
     |
@@ -59,8 +59,8 @@ O   |
             // Étape 5: Jambe gauche
             """
 +---+
-|   |
-O   |
+ |  |
+ O  |
 /|\\ |
 /   |
     |
@@ -70,8 +70,8 @@ O   |
             // Étape 6: Jambe droite
             """
 +---+
-|   |
-O   |
+ |  |
+ O  |
 /|\\ |
 / \\ |
     |
@@ -81,6 +81,10 @@ O   |
 
     public int decreaseAttemptsLeft() {
         attemptsLeft--;
+        if(attemptsLeft == 0) {
+            System.out.println("Game Over");
+            System.exit(419);
+        }
         return attemptsLeft;
     }
     public void printStatus() {

@@ -8,22 +8,20 @@ public class Game {
         if(guessedLetters.guessLetter(letter)) {
             Boolean found = word.addLetter(letter);
             if(found) {
-                if (word.isGuess()) {
-                    System.out.println("Vous avez gagné !");
-                    return;
-                }
+
                 hangmanStatus.printStatus();
                 System.out.println("\n" + word.getGuess());
                 System.out.println("\nLettre Trouver !");
-                System.out.println("Vous avez gagné !");
-
+                if (word.isGuess()) {
+                    System.out.println("Vous avez gagné !");
+                    System.exit(0);
+                }
 
             } else {
                 hangmanStatus.decreaseAttemptsLeft();
                 hangmanStatus.printStatus();
                 System.out.println("\n" + word.getGuess());
                 System.out.println("\nLettre Incorrect !");
-
             }
             return;
         }
